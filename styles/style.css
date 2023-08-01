@@ -285,8 +285,8 @@
   font-weight: 400;
 }
 
-.lots__card-list-item:first-child .card p:first-of-type {
-  padding: 202px 40px 0 40px;
+.first-card-text{
+  padding: 197px 40px 0 40px;
 }
 
 .lots__card-list-item:nth-child(2) .card p:nth-child(2) {
@@ -401,7 +401,7 @@
 .about__text p:first-child{
   width: 885px;
   height: 96px;
-  padding-bottom: 122px;
+  padding-bottom: 125px;
   line-height: 117%;
 
 }
