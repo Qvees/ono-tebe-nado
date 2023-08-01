@@ -422,8 +422,6 @@
 }
 
 footer .address {
-  margin: 0;
-  padding: 0;
   padding: 0 0 0 50px;
 }
 
@@ -436,6 +434,7 @@ footer .address {
   line-height: 24.3px;
   width: 240px;
   height: 24px;
+  white-space: nowrap;
 }
 
 .footer__menu-list {
