@@ -15,7 +15,6 @@
   text-decoration: none;
 }
 
-
 .header__links-list-item {
   list-style-type: circle;
   font-family: Raleway, sans-serif;
@@ -29,8 +28,7 @@
   list-style-type: none;
 }
 
-
-.header__links-list-item:not(:first-child)  {
+.header__links-list-item:not(:first-child) {
   text-decoration: underline;
   text-underline-offset: 0.2em;
 }
@@ -51,7 +49,6 @@
 .address {
   padding: 99px 0 0 356px;
   width: 240px;
- 
 }
 
 .address-items {
@@ -69,7 +66,7 @@
   align-items: center;
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  text-underline-offset: 4px; 
+  text-underline-offset: 4px;
 }
 
 .address-items:last-child {
@@ -95,7 +92,6 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
 }
-
 
 /* Стили для заголовка обложки */
 .cover__title {
@@ -163,18 +159,20 @@
 
 /* Обнуляем межбуквенное расстояние последней буквы в правой части заголовка */
 
-
 /* Стили для второстепенного заголовка */
 .cover__description {
   position: relative;
-  display: inline-block; /* Используем inline-block для размещения элементов в одной строке */
-  white-space: nowrap; /* Запрещаем перенос текста */
+  display: inline-block;
+  /* Используем inline-block для размещения элементов в одной строке */
+  white-space: nowrap;
+  /* Запрещаем перенос текста */
   margin: 147px 0px 0px 422px;
 }
 
 /* Стили для межбуквенного расстояния */
 .cover__description-text-word-spacing {
-  display: inline-block; /* Используем inline-block, чтобы текст и кнопка были в одной строке */
+  display: inline-block;
+  /* Используем inline-block, чтобы текст и кнопка были в одной строке */
   color: #fff;
   font-family: Raleway, sans-serif;
   font-size: 22px;
@@ -184,12 +182,14 @@
   text-transform: uppercase;
   word-spacing: 17px;
   padding-right: 18px;
-  vertical-align: middle; /* Выравниваем элемент по вертикали */
+  vertical-align: middle;
+  /* Выравниваем элемент по вертикали */
 }
 
 /* Стили для второй части  */
 .cover__description-text-word-spacing-last-words {
-  display: inline-block; /* Используем inline-block, чтобы текст и кнопка были в одной строке */
+  display: inline-block;
+  /* Используем inline-block, чтобы текст и кнопка были в одной строке */
   color: #fff;
   font-family: Raleway, sans-serif;
   font-size: 22px;
@@ -198,7 +198,8 @@
   line-height: 28px;
   word-spacing: 22px;
   text-transform: uppercase;
-  vertical-align: middle; /* Выравниваем элемент по вертикали */
+  vertical-align: middle;
+  /* Выравниваем элемент по вертикали */
 }
 
 /* Стили для кнопки */
@@ -220,7 +221,7 @@
   padding: 12px;
   margin: 135px 50px 0 0;
   float: right;
-  vertical-align: middle; 
+  vertical-align: middle;
 }
 
 .lots__heading {
@@ -285,7 +286,7 @@
   font-weight: 400;
 }
 
-.lots__card-list-item:first-child .card p:first-of-type{
+.lots__card-list-item:first-child .card p:first-of-type {
   padding: 200px 40px 0 40px;
 }
 
@@ -304,7 +305,6 @@
   position: relative;
   width: 430px;
   height: 450px;
-  width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -398,12 +398,12 @@
   font-weight: 400;
   margin: 100px 0px 0 0;
 }
-.about__text p:first-child{
+
+.about__text p:first-child {
   width: 885px;
   height: 96px;
   padding-bottom: 125px;
   line-height: 117%;
-
 }
 
 /* Стили для первого абзаца текста */
@@ -436,16 +436,15 @@ footer .address {
   line-height: 24.3px;
   width: 240px;
   height: 24px;
-  
 }
 
 .footer__menu-list {
   list-style-type: none;
-  margin-left:55px ;
+  margin-left: 55px;
   padding-bottom: 27px;
 }
 
-.footer__menu-link{
+.footer__menu-link {
   color: #000;
   font-family: Raleway, sans-serif;
   font-size: 18px;
@@ -453,15 +452,17 @@ footer .address {
   font-weight: 400;
   line-height: normal;
   text-underline-offset: 4px;
-
 }
+
 .footer__menu-list-item {
   text-align: center;
   justify-content: center;
 }
+
 .footer__menu-link_active a {
   text-decoration: none;
 }
+
 .footer__social-list {
   display: flex;
   list-style-type: none;
