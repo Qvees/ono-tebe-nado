@@ -7,7 +7,7 @@
 
 .header__links-list {
   display: flex;
-  padding: 135px 0 0 51px;
+  padding: 136px 0 0 49px;
   list-style-type: none;
 }
 
@@ -49,7 +49,7 @@
 
 /* Стили для адреса */
 .address {
-  padding: 97px 0 0 356px;
+  padding: 99px 0 0 356px;
   width: 240px;
  
 }
@@ -112,9 +112,6 @@
 }
 
 /* Стили для выделенных частей текста в заголовке */
-.accent-span {
- 
-}
 
 /* Стили для верхней части заголовка */
 .span-top {
@@ -165,21 +162,19 @@
 }
 
 /* Обнуляем межбуквенное расстояние последней буквы в правой части заголовка */
-.span-right__last-letter {
 
-}
 
 /* Стили для второстепенного заголовка */
 .cover__description {
   position: relative;
-  display: inline-flex;
-  width: 633px;
-  align-items: center;
+  display: inline-block; /* Используем inline-block для размещения элементов в одной строке */
+  white-space: nowrap; /* Запрещаем перенос текста */
   margin: 147px 0px 0px 422px;
 }
 
 /* Стили для межбуквенного расстояния */
 .cover__description-text-word-spacing {
+  display: inline-block; /* Используем inline-block, чтобы текст и кнопка были в одной строке */
   color: #fff;
   font-family: Raleway, sans-serif;
   font-size: 22px;
@@ -189,10 +184,12 @@
   text-transform: uppercase;
   word-spacing: 17px;
   padding-right: 18px;
+  vertical-align: middle; /* Выравниваем элемент по вертикали */
 }
 
 /* Стили для второй части  */
 .cover__description-text-word-spacing-last-words {
+  display: inline-block; /* Используем inline-block, чтобы текст и кнопка были в одной строке */
   color: #fff;
   font-family: Raleway, sans-serif;
   font-size: 22px;
@@ -201,12 +198,13 @@
   line-height: 28px;
   word-spacing: 22px;
   text-transform: uppercase;
-  padding-left: 4px;
+  vertical-align: middle; /* Выравниваем элемент по вертикали */
 }
 
 /* Стили для кнопки */
 .bet-button {
   position: relative;
+  display: inline-block;
   color: #fff;
   text-align: center;
   font-family: Raleway, sans-serif;
@@ -220,8 +218,9 @@
   background-color: transparent;
   border: 1px solid #fff;
   padding: 12px;
+  margin: 135px 50px 0 0;
   float: right;
-  margin: 135px 50px 50px 78px;
+  vertical-align: middle; 
 }
 
 .lots__heading {
