@@ -270,6 +270,7 @@
 }
 
 .card h3 {
+  display:flex;
   font-size: 22px;
   font-weight: 700;
   text-decoration-line: underline;
@@ -285,8 +286,8 @@
   font-weight: 400;
 }
 
-.first-card-text{
-  padding: 197px 40px 0 40px;
+.lots__card-list-item:first-child .card p:first-of-type{
+  padding: 200px 40px 0 40px;
 }
 
 .lots__card-list-item:nth-child(2) .card p:nth-child(2) {
