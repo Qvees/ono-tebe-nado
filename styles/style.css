@@ -245,7 +245,7 @@
   display: grid;
   grid-template-columns: repeat(3, 430px);
   column-gap: 25px;
-  margin: 27px auto;
+  margin-top: 27px;
   list-style-type: none;
 }
 
