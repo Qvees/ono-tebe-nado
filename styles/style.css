@@ -2,13 +2,13 @@
 .header {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
-  height: 293px;
 }
 
 .header__links-list {
   display: flex;
   padding: 136px 0 0 49px;
   list-style-type: none;
+  align-items: flex-start;
 }
 
 .header__links-list:first-child a {
@@ -42,17 +42,21 @@
   width: 148px;
   height: 106px;
   padding-left: 2px;
+  margin-top: 92px;
   flex-shrink: 0;
 }
 
 /* Стили для адреса */
 .address {
-  padding: 99px 0 0 356px;
-  width: 240px;
+  display: grid;
+  grid-template-rows: 24px 24px 24px;
+  justify-content: right;
+  margin: 98px 49px 0 0;
 }
 
 .address-items {
-  width: 240px;
+  max-width: 240px;
+  width: 100%;
   color: #000;
   font-family: Raleway, sans-serif;
   font-size: 18px;
@@ -76,11 +80,11 @@
 /* Стили для обложки */
 .cover {
   position: relative;
-  height: 757px;
   background-image: url(../images/cover.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  margin-top: 92px;
 }
 
 .cover::before {
@@ -162,17 +166,20 @@
 /* Стили для второстепенного заголовка */
 .cover__description {
   position: relative;
-  display: inline-block;
-  /* Используем inline-block для размещения элементов в одной строке */
-  white-space: nowrap;
-  /* Запрещаем перенос текста */
-  margin: 147px 0px 0px 422px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 1fr auto;
+  justify-content: flex-end;
+  align-items: center;
+  justify-items: right;
+  margin-top: 135px;
+  margin-right: 50px;
+  padding-bottom: 48px;
+  column-gap: 78px;
 }
 
 /* Стили для межбуквенного расстояния */
 .cover__description-text-word-spacing {
-  display: inline-block;
-  /* Используем inline-block, чтобы текст и кнопка были в одной строке */
   color: #fff;
   font-family: Raleway, sans-serif;
   font-size: 22px;
@@ -181,9 +188,9 @@
   line-height: 28px;
   text-transform: uppercase;
   word-spacing: 17px;
-  padding-right: 18px;
-  vertical-align: middle;
-  /* Выравниваем элемент по вертикали */
+}
+.extra-word-spacing {
+  word-spacing: 23px;
 }
 
 /* Стили для второй части  */
@@ -205,9 +212,7 @@
 /* Стили для кнопки */
 .bet-button {
   position: relative;
-  display: inline-block;
   color: #fff;
-  text-align: center;
   font-family: Raleway, sans-serif;
   font-size: 22px;
   font-style: normal;
@@ -218,16 +223,12 @@
   height: 52px;
   background-color: transparent;
   border: 1px solid #fff;
-  padding: 12px;
-  margin: 135px 50px 0 0;
-  float: right;
-  vertical-align: middle;
+  cursor: pointer;
 }
 
 .lots__heading {
   display: grid;
   grid-template-rows: auto 1fr;
-  height: 47px;
   color: #000;
   font-family: Raleway, sans-serif;
   font-size: 40px;
@@ -237,21 +238,34 @@
   text-transform: uppercase;
   margin: 180px 0 0 90px;
 }
-
-.lots {
-  height: 579px;
-}
-
 .lots__card-list {
+  max-width: 1440px;
   display: grid;
   grid-template-columns: repeat(3, 430px);
   column-gap: 25px;
   margin-top: 27px;
+  margin-bottom: 30px;
+  margin-left: 50px;
   list-style-type: none;
 }
 
+@media (max-width: 1440px) {
+  /* не понял как вместить карточку полностью при размере меньше 1440, сделал с помощью медиа */
+  .lots__card-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .lots__card-list-item {
+    flex-basis: calc(
+      33.33% - 25px
+    ); /* Рассчитываем ширину для 3 карточек в ряду с отступами */
+    margin-bottom: 25px;
+  }
+}
+
 .lots__card-list-item {
-  margin-left: 50px;
   width: 430px;
   position: relative;
 }
@@ -260,8 +274,8 @@
   text-decoration: none;
 }
 
-.card h3,
-.card p {
+.lots h3,
+.lots p {
   position: relative;
   z-index: 1;
   color: #fff;
@@ -270,7 +284,7 @@
   line-height: 120%;
 }
 
-.card h3 {
+.lots h3 {
   font-size: 22px;
   font-weight: 700;
   text-decoration-line: underline;
@@ -279,32 +293,29 @@
   text-decoration-thickness: 1px;
   text-transform: uppercase;
   padding: 50px 40px 0 40px;
+  margin-bottom: 30px;
 }
 
-.card p {
+.lots p {
   font-size: 20px;
   font-weight: 400;
+  display: flex;
+  padding: 0 40px 0 40px; /* тут я сделал отступ в 20пх, но у всех тегов p разный отступ, как это сделать я не понимаю*/
 }
 
 .lots__card-list-item:first-child .card p:first-of-type {
-  padding: 200px 40px 0 40px;
+  /* не понимаю как я должен сделать разный отступ сверху для каждого p не объявляя новый селектор либо же не обращаясь к определенному элементу*/
+  margin-top: 202px;
 }
-
-.lots__card-list-item:nth-child(2) .card p:nth-child(2) {
-  padding: 31px 40px 0 40px;
-}
-
-.lots__card-list-item:last-child .card p:first-of-type {
-  padding: 79px 40px 0 40px;
+.lots__card-list-item:last-child .card p:last-of-type {
+  margin-top: 80px;
 }
 
 /* Стили для карточек с изображениями */
-.card_type_film,
-.card_type_book,
-.card_type_picture {
+.card_type {
   position: relative;
   width: 430px;
-  height: 450px;
+  min-height: 450px;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -331,12 +342,6 @@
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-.more-link-container {
-  text-align: left;
-  margin-left: 40px;
-  margin-top: 30px;
-}
-
 .lots__look-more-link {
   color: #000;
   font-family: Raleway, sans-serif;
@@ -346,13 +351,13 @@
   line-height: normal;
   text-decoration-thickness: 1px;
   text-underline-offset: 4.5px;
+  margin-left: 90px;
+  margin-top: 20px;
 }
 
 /* Секция */
 .about {
   display: grid;
-  width: 1340px;
-  height: 487px;
   grid-template-columns: 430px auto;
   margin-top: 181px;
   margin-left: 50px;
@@ -400,31 +405,28 @@
 }
 
 .about__text p:first-child {
-  width: 885px;
-  height: 96px;
-  padding-bottom: 125px;
+  padding-right: 50px;
+  padding-bottom: 30px;
   line-height: 117%;
 }
 
 /* Стили для первого абзаца текста */
 .about__text p:last-child {
-  width: 885px;
-  height: 119px;
+  padding-right: 50px;
   line-height: 115%;
 }
 
 .footer {
-  display: flex;
-  width: 1440px;
-  height: 84px;
-  justify-content: space-between;
-  margin-top: 180px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  max-width: 1440px;
+  margin: 185px 0 0 0;
 }
-
-footer .address {
-  padding: 0 0 0 50px;
+.footer__address {
+  display: grid;
+  grid-template-rows: 24px 24px 24px;
+  margin: 0 49px 109px 50px;
 }
-
 .address-items-footer {
   color: #000;
   font-family: Raleway, sans-serif;
@@ -432,13 +434,10 @@ footer .address {
   font-style: normal;
   font-weight: 400;
   line-height: 24.3px;
-  width: 240px;
-  height: 24px;
   white-space: nowrap;
 }
 
 .address-items-footer:not(:last-child) {
-  align-items: center;
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 4px;
@@ -449,9 +448,11 @@ footer .address {
 }
 
 .footer__menu-list {
+  display: grid;
+  grid-template-columns: 1fr; /* Одна равномерная колонка */
+  justify-content: center; /* Выравнивание по центру по горизонтали */
   list-style-type: none;
-  margin-left: 55px;
-  padding-bottom: 27px;
+  padding-right: 40px;
 }
 
 .footer__menu-link {
@@ -466,7 +467,7 @@ footer .address {
 
 .footer__menu-list-item {
   text-align: center;
-  justify-content: center;
+  margin: 0;
 }
 
 .footer__menu-link_active a {
@@ -475,14 +476,17 @@ footer .address {
 
 .footer__social-list {
   display: flex;
+  justify-content: flex-end;
   list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
-
 .footer__social-link {
-  padding: 0 49px 0 0;
+  margin: 0 49px 0 0;
 }
 
 .footer__social-icon {
   width: 48px;
   height: 50px;
+  margin: 0;
 }
