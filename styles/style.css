@@ -161,8 +161,6 @@
   letter-spacing: 5px;
 }
 
-/* Обнуляем межбуквенное расстояние последней буквы в правой части заголовка */
-
 /* Стили для второстепенного заголовка */
 .cover__description {
   position: relative;
@@ -196,7 +194,6 @@
 /* Стили для второй части  */
 .cover__description-text-word-spacing-last-words {
   display: inline-block;
-  /* Используем inline-block, чтобы текст и кнопка были в одной строке */
   color: #fff;
   font-family: Raleway, sans-serif;
   font-size: 22px;
@@ -226,6 +223,9 @@
   cursor: pointer;
 }
 
+.lots {
+  padding: 0 50px 0 50px;
+}
 .lots__heading {
   display: grid;
   grid-template-rows: auto 1fr;
@@ -236,41 +236,27 @@
   font-weight: 700;
   line-height: normal;
   text-transform: uppercase;
-  margin: 180px 0 0 90px;
+  margin: 180px 0 0 40px;
 }
 .lots__card-list {
   max-width: 1440px;
-  display: grid;
-  grid-template-columns: repeat(3, 430px);
-  column-gap: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
   margin-top: 27px;
   margin-bottom: 30px;
-  margin-left: 50px;
   list-style-type: none;
-}
-
-@media (max-width: 1440px) {
-  /* не понял как вместить карточку полностью при размере меньше 1440, сделал с помощью медиа запроса. Вылазила 3 карточка.*/
-  .lots__card-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  .lots__card-list-item {
-    flex-basis: calc(
-      33.33% - 25px
-    ); /* Рассчитываем ширину для 3 карточек в ряду с отступами */
-    margin-bottom: 25px;
-  }
 }
 
 .lots__card-list-item {
   width: 430px;
+  min-height: 450px;
   position: relative;
+  flex-grow: 1;
 }
 
 .card-link {
+  /* если здесь прописать display:block то высотка карточек ломается */
   text-decoration: none;
 }
 
@@ -293,31 +279,29 @@
   text-decoration-thickness: 1px;
   text-transform: uppercase;
   padding: 50px 40px 0 40px;
-  margin-bottom: 30px;
 }
 
 .lots p {
   font-size: 20px;
   font-weight: 400;
   display: flex;
-  padding: 0 40px 0 40px; /* тут я сделал отступ в 20пх, но у всех тегов p разный отступ, как это сделать я не понимаю*/
+  padding: 0 40px 50px 40px;
 }
 
-.lots__card-list-item:first-child .card p:first-of-type {
-  /* не понимаю как  сделать разный отступ сверху для каждого p не объявляя новый селектор либо же не обращаясь к определенному элементу*/
-  margin-top: 202px;
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 100%;
 }
-.lots__card-list-item:last-child .card p:last-of-type {
-  margin-top: 80px;
-}
-
 /* Стили для карточек с изображениями */
 .card_type {
   position: relative;
-  width: 430px;
-  min-height: 450px;
   background-size: cover;
   background-repeat: no-repeat;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .card_type_film {
@@ -351,8 +335,7 @@
   line-height: normal;
   text-decoration-thickness: 1px;
   text-underline-offset: 4.5px;
-  margin-left: 90px;
-  margin-top: 20px;
+  margin: 20px 0 0 40px;
 }
 
 /* Секция */
@@ -449,8 +432,8 @@
 
 .footer__menu-list {
   display: grid;
-  grid-template-columns: 1fr; /* Одна равномерная колонка */
-  justify-content: center; /* Выравнивание по центру по горизонтали */
+  grid-template-columns: 1fr;
+  justify-content: center; 
   list-style-type: none;
   padding-right: 40px;
 }
